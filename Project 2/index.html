@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Tracker & Planner</title>
+</head>
+<style>
+    body {
+        font-family: Helvetica, sans-serif;
+    }
+
+    .logobar {
+        border: 2px solid rgb(243, 243, 243);
+        height: 50px;
+    }
+
+    .logobar ul {
+        overflow: auto;
+    }
+
+    .navbar {
+        /* border-bottom: 1px solid rgb(243, 243, 243); */
+        margin-top: -19px;
+        height: 100px;
+        padding-left: 0px;
+    }
+
+    .navbar li {
+        float: left;
+        list-style: none;
+        /** to remove bullets points**/
+        padding: 3px 0px;
+        margin: 23px 23px;
+        font-size: 20px;
+        font-weight: 100;
+        font-family: Helvetica, sans-serif;
+    }
+
+    .navbar li a {
+        text-decoration: none;
+        margin-top: 30px;
+        color: black;
+    }
+
+    .navbar li a:hover {
+        font-weight: bold;
+        border-bottom: 4px solid green;
+    }
+
+    .logobar li {
+        float: left;
+        list-style: none;
+        padding: 6px 13px;
+    }
+
+    .logobar li img {
+        display: block;
+    }
+
+    .navbar li img {
+        margin-top: 0px;
+    }
+
+    #pic1 {
+        object-fit: cover;
+        float: left;
+        margin: 0px 2px;
+        width: 80px;
+    }
+
+    #pic2 {
+        object-fit: cover;
+        float: left;
+        margin: -3px 2px;
+        width: 100px;
+    }
+
+    #pic3 {
+        object-fit: cover;
+        float: left;
+        margin: -4px 2px;
+        width: 127px;
+    }
+
+    #pic4 {
+        object-fit: cover;
+        float: left;
+        margin: -3px 2px;
+        width: 70px;
+    }
+
+    #pic5 {
+        object-fit: cover;
+        float: left;
+        margin: 0px 2px;
+        width: 100px;
+    }
+
+    #pic6 {
+        object-fit: cover;
+        float: left;
+        margin: 0px 2px;
+        width: 100px;
+    }
+
+    #mainlogo {
+        object-fit: cover;
+        float: left;
+        margin: -18px 2px;
+        width: 100px;
+
+    }
+
+    .btn {
+        margin: 27px 17px;
+        padding: 4px 8px;
+        border-radius: 6px;
+        border-color: black;
+        background-color: white;
+
+    }
+
+    .btn:hover {
+        cursor: pointer;
+        background-color: whitesmoke;
+    }
+
+    .container {
+        /* border: 2px solid green; */
+        margin-top: -25px;
+        position: relative;
+        text-align: center;
+    }
+
+    .container img {
+        background-repeat: no-repeat;
+        background-size: 300px 10px;
+        width: 100%;
+        height: 500px;
+        box-sizing: border-box;
+        display: block;
+    }
+
+    .greenbox {
+        /* border: 2px solid purple; */
+        background-color: #008481;
+        padding: 1px 13px;
+        margin-top: -19px;
+        color: white;
+        font-weight: bolder;
+        text-align: center;
+        font-size: larger;
+        cursor: pointer;
+    }
+
+    .star {
+        color: orange;
+        padding: -10px;
+        font-size: 150%;
+        cursor: pointer;
+    }
+
+    .read {
+        font-family: Helvetica, sans-serif;
+        font-weight: lighter;
+        color: white;
+        /* border-bottom: 2px solid white; */
+    }
+
+    .read:hover {
+        color: rgb(229, 238, 245);
+        cursor: pointer;
+    }
+
+    .center {
+        position: absolute;
+        top: 46%;
+        left: 29%;
+        transform: translate(-50%, -50%);
+        /* border: 2px solid red; */
+        padding: 45px 45px;
+        text-align: left;
+        font-size: 63px;
+        margin-left: 23px;
+        font-family: Helvetica, sans-serif;
+        color: #1b8381;
+        font-weight: 800;
+    }
+
+    .storelogo li {
+        float: left;
+        list-style: none;
+        padding: 6px 13px;
+    }
+
+    #apple {
+        object-fit: cover;
+        float: left;
+        margin: 24px -40px;
+        width: 127px;
+        height: 40px;
+        cursor: pointer;
+    }
+
+    #google {
+        object-fit: cover;
+        float: left;
+        margin: 24px 27px;
+        width: 127px;
+        height: 40px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .signup {
+        margin: 14px 12px;
+        padding: 10px 24px;
+        border-radius: 4px;
+        background: #1b8381;
+        border: 2px solid #1b8381;
+        color: white;
+        font-size: 18px;
+        box-sizing: border-box;
+        cursor: pointer;
+        display: block;
+        font-family: Helvetica, sans-serif;
+    }
+
+    .signup:hover {
+        background-color: #1e7271;
+    }
+
+    .greyline {
+        font-size: 25px;
+        margin: -74px 7px;
+        color: #342b50;
+        font-weight: bold;
+    }
+</style>
+
+<body>
+    <header>
+        <div class="logobar">
+            <ul>
+                <li><img src="intuit-logo-super-blue.png" alt="" id="pic1"></li>
+                <li><img src="TT_Color.png" alt="" id="pic2"></li>
+                <li><img src="CK_Color.png" alt="" id="pic3"></li>
+                <li><img src="Mint-logo-header-2.png" alt="" id="pic4"></li>
+                <li><img src="quickbooks-logo.png" alt="" id="pic5"></li>
+                <li><img src="Group-1.png" alt="" id="pic6"></li>
+            </ul>
+        </div>
+        <div class="navbar">
+            <ul>
+                <li><img src="Mint-logo-header-2.png" alt="" id="mainlogo"></li>
+                <li><a href="#">How it works</a></li>
+                <li><a href="#">Credit cards</a></li>
+                <li><a href="#">Investing</a></li>
+                <li><a href="#">Loans</a></li>
+                <li><a href="#">Resources</a></li>
+                <li><a href="#">Mint salary (Beta)</a></li>
+                <button class="btn">Sign Up</button>
+                <button class="btn">Sign in</button>
+            </ul>
+        </div>
+    </header>
+    <div class="container">
+        <img src="Mint.com-ZoneA-X-Large-2.18Updates-1.png" alt="">
+        <div class="center">Managing money, <br>made simple
+            <br>
+            <button class="signup">Sign up for free</button>
+            <br>
+            <div class="greyline">#1 most downloaded personal finance app1</div>
+            <div class="storelogo">
+                <ul>
+                    <li><img src="apple store.png" alt="" id="apple"></li>
+                    <li><img src="google play.png" alt="" id="google"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="greenbox">
+        <p>See why Mint is trusted by 30 million users &nbsp <span class="star">&starf; &starf; &starf; &starf;</span>
+            &nbsp <a href="#" class="read">Read reviews</a>
+        </p>
+    </div>
+</body>
+
+</html>
